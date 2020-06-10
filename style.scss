@@ -1,0 +1,69 @@
+// *{
+//   background: red;
+// }
+
+header {
+  text-align: center;
+  // font-size: 4rem;
+}
+
+.container {
+  // margin: 2vh 10vw 0 10vw;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: pink;
+
+  .board {
+    // height: 30vh;
+    padding: 0 10px 10px 10px;
+
+    .grid {
+      background: blue;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      align-items: center;
+      border: 2px solid black;
+      // height: 50vh;
+      // width: 100vw;
+
+      .item {
+        // background: red;
+        min-height: 18px;
+        // margin: 2px;
+        // gap: 10px;
+        text-align: center;
+        border: 1px solid black;
+
+        // height: 100%;
+        // width: 100%;
+        // padding: 10%;
+
+        // padding: 10px;
+        // // height: 100px;
+        // padding: 0 20px;
+      }
+      .ship {
+        background: grey;
+      }
+
+      .hit {
+        background: orange;
+      }
+      .miss {
+        background: teal;
+      }
+    }
+  }
+
+  #opponent {
+    // display: grid;
+    background: orange;
+    text-align: center;
+  }
+  #mine {
+    background: green;
+    text-align: center;
+  }
+}

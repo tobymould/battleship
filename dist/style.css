@@ -1,0 +1,49 @@
+header {
+  text-align: center;
+}
+
+.container {
+  gap: 10px;
+  background: pink;
+}
+
+.container .board {
+  padding: 0 10px 10px 10px;
+}
+
+.container .board .grid {
+  background: blue;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.container .board .grid .item {
+  min-height: 18px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.container .board .grid .ship {
+  background: grey;
+}
+
+.container .board .grid .hit {
+  background: orange;
+}
+
+.container .board .grid .miss {
+  background: teal;
+}
+
+.container #opponent {
+  background: orange;
+  text-align: center;
+}
+
+.container #mine {
+  background: green;
+  text-align: center;
+}
