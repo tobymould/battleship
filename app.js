@@ -10,7 +10,6 @@ const startGame = () => {
   console.log('game started');
   placeShips();
   console.log('past placeShips function now');
-  shotsFired();
   console.log('past shotsFired function now');
 };
 

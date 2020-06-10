@@ -15,7 +15,6 @@ var startGame = function startGame() {
   console.log('game started');
   (0, _workingPlacementCode["default"])();
   console.log('past placeShips function now');
-  (0, _workingShotCode["default"])();
   console.log('past shotsFired function now');
 };
 
