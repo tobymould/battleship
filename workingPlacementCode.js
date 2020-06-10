@@ -4,16 +4,15 @@ import shotsFired from './workingShotCode.js';
 const opponentGrid = document.querySelector('#opponent .grid');
 const myGrid = document.querySelector('#mine .grid');
 // const start = document.querySelector('button');
+let turn = 0;
 
 const switchEvents = () => {
+  opponentGrid.removeEventListener('click', opponentPlacementEvent);
   myGrid.removeEventListener('click', myPlacementEvent);
-  opponentGrid.removeEventListener('click', myPlacementEvent);
   shotsFired();
 };
 
-let turn = 0;
-
-// ---------Step 3 - Create Event Handlers:---------
+// ---------Step 3: Event Handlers---------
 const opponentPlacementEvent = event => {
   if (turn % 2 !== 0) {
     if (event.target.className === 'item') {
@@ -43,7 +42,6 @@ const myPlacementEvent = event => {
 
 // ------------FUNCTION 1 - PLACING SHIPS------------
 const placeShips = () => {
-  // -----------Step 2 - Add Event Listeners-------------
   opponentGrid.addEventListener('click', opponentPlacementEvent);
   myGrid.addEventListener('click', myPlacementEvent);
 };

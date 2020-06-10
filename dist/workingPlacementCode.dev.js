@@ -13,13 +13,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var opponentGrid = document.querySelector('#opponent .grid');
 var myGrid = document.querySelector('#mine .grid'); // const start = document.querySelector('button');
 
-var switchEvents = function switchEvents() {
-  myGrid.removeEventListener('click', myPlacementEvent);
-  opponentGrid.removeEventListener('click', myPlacementEvent);
-  (0, _workingShotCode["default"])();
-};
+var turn = 0;
 
-var turn = 0; // ---------Step 3 - Create Event Handlers:---------
+var switchEvents = function switchEvents() {
+  opponentGrid.removeEventListener('click', opponentPlacementEvent);
+  myGrid.removeEventListener('click', myPlacementEvent);
+  (0, _workingShotCode["default"])();
+}; // ---------Step 3: Event Handlers---------
+
 
 var opponentPlacementEvent = function opponentPlacementEvent(event) {
   if (turn % 2 !== 0) {
@@ -53,7 +54,6 @@ var myPlacementEvent = function myPlacementEvent(event) {
 
 
 var placeShips = function placeShips() {
-  // -----------Step 2 - Add Event Listeners-------------
   opponentGrid.addEventListener('click', opponentPlacementEvent);
   myGrid.addEventListener('click', myPlacementEvent);
 }; // placeShips();

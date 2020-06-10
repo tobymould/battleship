@@ -31,19 +31,15 @@ header {
       .item {
         // background: red;
         min-height: 18px;
-        // margin: 2px;
-        // gap: 10px;
         text-align: center;
         border: 1px solid black;
-
-        // height: 100%;
-        // width: 100%;
-        // padding: 10%;
-
-        // padding: 10px;
-        // // height: 100px;
-        // padding: 0 20px;
       }
+
+      .index {
+        min-height: 18px;
+        border: 1px solid black;
+      }
+
       .ship {
         background: grey;
       }
@@ -51,6 +47,7 @@ header {
       .hit {
         background: orange;
       }
+
       .miss {
         background: teal;
       }

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var endGame=function(){console.log("Game Over")},_default=endGame;exports.default=endGame;

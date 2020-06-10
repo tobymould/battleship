@@ -26,6 +26,11 @@ header {
   border: 1px solid black;
 }
 
+.container .board .grid .index {
+  min-height: 18px;
+  border: 1px solid black;
+}
+
 .container .board .grid .ship {
   background: grey;
 }

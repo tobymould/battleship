@@ -1,16 +1,20 @@
 import placeShips from './workingPlacementCode.js';
-import shotsFired from './workingShotCode.js';
 
 // Step 1 - Grab elements needed:
-const opponentGrid = document.querySelector('#opponent .grid');
-const myGrid = document.querySelector('#mine .grid');
+const items = document.querySelectorAll('.item');
 const start = document.querySelector('button');
 
+const reset = () => {
+  items.forEach(item => {
+    item.className = 'item';
+    item.innerHTML = '';
+  });
+};
+console.log(items);
+
 const startGame = () => {
-  console.log('game started');
+  reset();
   placeShips();
-  console.log('past placeShips function now');
-  console.log('past shotsFired function now');
 };
 
 start.addEventListener('click', startGame);

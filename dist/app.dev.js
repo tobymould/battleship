@@ -2,20 +2,24 @@
 
 var _workingPlacementCode = _interopRequireDefault(require("./workingPlacementCode.js"));
 
-var _workingShotCode = _interopRequireDefault(require("./workingShotCode.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Step 1 - Grab elements needed:
-var opponentGrid = document.querySelector('#opponent .grid');
-var myGrid = document.querySelector('#mine .grid');
+var items = document.querySelectorAll('.item');
 var start = document.querySelector('button');
 
+var reset = function reset() {
+  items.forEach(function (item) {
+    item.className = 'item';
+    item.innerHTML = '';
+  });
+};
+
+console.log(items);
+
 var startGame = function startGame() {
-  console.log('game started');
+  reset();
   (0, _workingPlacementCode["default"])();
-  console.log('past placeShips function now');
-  console.log('past shotsFired function now');
 };
 
 start.addEventListener('click', startGame);
