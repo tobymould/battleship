@@ -35,6 +35,10 @@ header {
   background: grey;
 }
 
+.container .board .grid .shipOpp {
+  text-align: center;
+}
+
 .container .board .grid .hit {
   background: orange;
 }

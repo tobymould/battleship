@@ -5,19 +5,24 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _endGameCode = _interopRequireDefault(require("./endGameCode.js"));
+var _cEndGameCode = _interopRequireDefault(require("./c)endGameCode.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-// Step 1 - Grab elements needed:
+// ------------------------------//
+// ---------SHOOTING CODE--------//
+// ------------------------------//
+// -----1) Grab elements needed------//
 var opponentGrid = document.querySelector('#opponent .grid');
 var myGrid = document.querySelector('#mine .grid');
-var myItems = document.querySelectorAll('#mine .item'); // const start = document.querySelector('button');
+var myItems = document.querySelectorAll('#mine .item'); //1b) instantiated variables
 
 var turn = 0;
 var myHitCount = 0;
 var opponentHitCount = 0;
 var iterator = 19; // let arrayTest = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+// -----4) support Function Definition-----//
+// for 'Random Number Generator' and 'Switch' to change to the shooting phase of the game.
 
 var randomNumber1 = function randomNumber1() {
   // const randoNumber = Math.ceil(Math.random() * iterator);
@@ -37,12 +42,14 @@ var randomNumber1 = function randomNumber1() {
 var switchEvents = function switchEvents() {
   opponentGrid.removeEventListener('click', opponentShotEvent);
   myGrid.removeEventListener('click', myShotEvent);
-  (0, _endGameCode["default"])();
-}; // ---------Step 3: Event Handlers---------
+  (0, _cEndGameCode["default"])(); //switches to 'endGame' function (seperate file).
+}; // ---------3) Event Handlers---------//
+// ...will run these 2 Event Handlers for my and my opponents turns.
 
 
 var opponentShotEvent = function opponentShotEvent(event) {
   if (turn % 2 !== 0) {
+    //if turn is NOT divisible by 2 (i.e. not an even number...)
     var go = randomNumber1();
 
     if (myItems[go].className === 'item ship') {
@@ -52,7 +59,8 @@ var opponentShotEvent = function opponentShotEvent(event) {
       myHitCount++; // console.log(`my Hit Count: ${myHitCount}`);
 
       if (myHitCount >= 4) {
-        return switchEvents();
+        //if the 'myHitCount' variable >= 4 (coz only 4 ships)...
+        return switchEvents(); //...run the 'switchEvents' support function.
       }
     } else if (myItems[go].className !== 'item ship') {
       myItems[go].innerHTML = 'O';
@@ -69,6 +77,7 @@ var opponentShotEvent = function opponentShotEvent(event) {
 
 var myShotEvent = function myShotEvent(event) {
   if (turn % 2 === 0) {
+    //if turn IS divisible by 2 (i.e. an even number...)
     if (event.target.className === 'item shipOpp') {
       event.target.innerHTML = 'X';
       event.target.className += ' hit';
@@ -89,7 +98,8 @@ var myShotEvent = function myShotEvent(event) {
   } // console.log(event);
   // console.log(turn);
 
-}; // ---------FUNCTION 2 - SHOTSFIRED------------
+}; // ------------SHOOTING SUPPORT FUNCTION------------//
+// ------2) The event listener, when triggered,...-------//
 
 
 var shotsFired = function shotsFired() {
@@ -100,5 +110,6 @@ var shotsFired = function shotsFired() {
 }; // shotsFired();
 
 
-var _default = shotsFired;
+var _default = shotsFired; // Exports the 'shotsFired' support function.
+
 exports["default"] = _default;
