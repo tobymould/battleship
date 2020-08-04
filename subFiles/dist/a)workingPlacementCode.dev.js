@@ -61,6 +61,12 @@ var opponentPlacementEvent = function opponentPlacementEvent(event) {
 var myPlacementEvent = function myPlacementEvent(event) {
   if (turn % 2 === 0) {
     //if turn IS divisible by 2 (i.e. an even number...)
+    if (event.target.value = 1) {
+      //Then add 1 to the event.target.value and add this classname and html to that grid box as well as the one that was clicked on.
+      event.target.className += ' ship';
+      event.target.innerHTML = 'Ship';
+    }
+
     if (event.target.className === 'item') {
       event.target.innerHTML = 'Ship';
       event.target.className += ' ship';
